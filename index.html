@@ -365,7 +365,7 @@
     const subject = encodeURIComponent('Message from your website — ' + name);
     const body = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\nCompany: ' + (document.getElementById('cf-company').value.trim() || 'N/A') + '\nReason: ' + (document.getElementById('cf-reason').value || 'N/A') + '\n\nMessage:\n' + msg);
     // ===================== EDIT: Replace YOUR_EMAIL@EMAIL.COM with your real email
-    window.location.href = 'mailto:YOUR_EMAIL@EMAIL.COM?subject=' + subject + '&body=' + body;
+    window.location.href = 'mailto:agerber2@babson.edu?subject=' + subject + '&body=' + body;
     document.getElementById('form-wrap').classList.add('form-hidden');
     document.getElementById('cf-success').classList.remove('form-hidden');
   });
