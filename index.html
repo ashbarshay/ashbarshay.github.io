@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>Ashley Bar-Shay — FinOps Engineer</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9LKCVY8X80"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-9LKCVY8X80');</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --sky-deep:#7fbfe8;
+  --text-dark:#1a2b3c;
+  --text-mid:#3d5a72;
+  --text-light:#6b8fa8;
+  --accent:#3a7ca5;
+  --accent-soft:#e8f4fb;
+  --card-bg:rgba(255,255,255,0.75);
+  --card-bg2:rgba(255,255,255,0.55);
+  --border:rgba(100,170,220,0.25);
+  --border2:rgba(100,170,220,0.4);
+  --glow:rgba(58,124,165,0.15);
+}
+html{scroll-behavior:smooth}
+body{
+  font-family:'DM Sans',sans-serif;
+  background:linear-gradient(170deg,#c8e8f7 0%,#daeef8 35%,#eaf5fb 70%,#f4f9fd 100%);
+  background-attachment:fixed;
+  min-height:100vh;color:var(--text-dark);
+  position:relative;overflow-x:hidden;
+}
+
+/* ── Clouds ── */
+.cloud-layer{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;overflow:hidden}
+.cloud{position:absolute;animation:drift linear infinite}
+.cloud svg ellipse{fill:white}
+@keyframes drift{from{transform:translateX(-400px)}to{transform:translateX(calc(100vw + 400px))}}
+.cl1{top:3%;opacity:.70;animation-duration:28s;animation-delay:-2s}
+.cl2{top:9%;opacity:.50;animation-duration:22s;animation-delay:-14s}
+.cl3{top:15%;opacity:.65;animation-duration:35s;animation-delay:-7s}
+.cl4{top:22%;opacity:.40;animation-duration:20s;animation-delay:-18s}
+.cl5{top:29%;opacity:.60;animation-duration:30s;animation-delay:-4s}
+.cl6{top:36%;opacity:.35;animation-duration:24s;animation-delay:-22s}
+.cl7{top:43%;opacity:.55;animation-duration:38s;animation-delay:-9s}
+.cl8{top:50%;opacity:.30;animation-duration:19s;animation-delay:-11s}
+.cl9{top:57%;opacity:.60;animation-duration:26s;animation-delay:-16s}
+.cl10{top:63%;opacity:.40;animation-duration:32s;animation-delay:-3s}
+.cl11{top:70%;opacity:.55;animation-duration:21s;animation-delay:-20s}
+.cl12{top:76%;opacity:.35;animation-duration:36s;animation-delay:-8s}
+.cl13{top:82%;opacity:.50;animation-duration:23s;animation-delay:-13s}
+.cl14{top:87%;opacity:.40;animation-duration:29s;animation-delay:-5s}
+.cl15{top:92%;opacity:.30;animation-duration:18s;animation-delay:-17s}
+.cl16{top:97%;opacity:.45;animation-duration:33s;animation-delay:-25s}
+
+/* ── Layout ── */
+.page{position:relative;z-index:1;max-width:860px;margin:0 auto;padding:0 28px 100px}
+
+/* ── Hero ── */
+.hero{text-align:center;padding:90px 0 70px}
+.hero h1{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(46px,7vw,76px);
+  font-weight:300;letter-spacing:0.02em;
+  color:var(--text-dark);line-height:1.05;margin-bottom:10px;
+}
+.hero .subtitle{
+  font-size:13px;letter-spacing:0.22em;text-transform:uppercase;
+  color:var(--accent);font-weight:500;margin-bottom:28px;
+  font-family:'DM Sans',sans-serif;
+}
+.hero .tagline{
+  font-family:'Cormorant Garamond',serif;
+  font-size:21px;font-style:italic;color:var(--text-mid);
+  font-weight:300;max-width:500px;margin:0 auto 32px;line-height:1.6;
+}
+.contact-bar{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:18px}
+.contact-pill{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:7px 16px;border-radius:8px;
+  background:rgba(255,255,255,0.7);
+  border:1px solid var(--border2);
+  font-size:12px;color:var(--text-mid);text-decoration:none;
+  font-weight:500;backdrop-filter:blur(10px);
+  transition:all 0.2s ease;
+}
+.contact-pill:hover{background:white;border-color:var(--accent);color:var(--accent);transform:translateY(-1px);box-shadow:0 4px 16px var(--glow)}
+.hero-btns{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
+
+/* ── Buttons ── */
+.btn-primary{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:12px 26px;border-radius:8px;
+  background:var(--accent);color:white;
+  font-size:14px;font-weight:500;
+  text-decoration:none;font-family:'DM Sans',sans-serif;
+  transition:all 0.2s ease;
+  box-shadow:0 2px 12px var(--glow);
+  border:none;cursor:pointer;letter-spacing:0.01em;
+}
+.btn-primary:hover{background:#2d6a92;transform:translateY(-2px);box-shadow:0 6px 24px rgba(58,124,165,0.3)}
+.btn-outline{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:11px 26px;border-radius:8px;
+  background:rgba(255,255,255,0.6);color:var(--accent);
+  font-size:14px;font-weight:500;
+  text-decoration:none;font-family:'DM Sans',sans-serif;
+  transition:all 0.2s ease;
+  border:1px solid var(--border2);cursor:pointer;
+  backdrop-filter:blur(10px);letter-spacing:0.01em;
+}
+.btn-outline:hover{background:white;border-color:var(--accent);transform:translateY(-2px);box-shadow:0 4px 16px var(--glow)}
+.btn-li{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:12px 26px;border-radius:8px;
+  background:#0a66c2;color:white;
+  font-size:14px;font-weight:500;
+  text-decoration:none;font-family:'DM Sans',sans-serif;
+  transition:all 0.2s ease;
+  box-shadow:0 2px 12px rgba(10,102,194,0.2);
+}
+.btn-li:hover{background:#0958a8;transform:translateY(-2px)}
+.li-icon{width:16px;height:16px;fill:white}
+
+/* ── Cards ── */
+section{margin-bottom:28px}
+.card{
+  background:var(--card-bg);
+  border:1px solid var(--border2);
+  border-radius:16px;padding:36px 40px;
+  backdrop-filter:blur(16px);
+  box-shadow:0 1px 0 rgba(255,255,255,0.8) inset, 0 4px 24px rgba(90,155,200,0.06);
+  position:relative;overflow:hidden;
+  transition:box-shadow 0.2s ease;
+}
+.card::before{
+  content:'';position:absolute;top:0;left:10%;right:10%;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(120,180,230,0.6),transparent);
+}
+.card:hover{box-shadow:0 1px 0 rgba(255,255,255,0.9) inset,0 8px 32px rgba(58,124,165,0.1)}
+
+/* ── Section label ── */
+.section-label{
+  display:flex;align-items:center;gap:12px;
+  font-size:10px;letter-spacing:0.25em;text-transform:uppercase;
+  color:var(--accent);font-weight:500;margin-bottom:22px;
+  font-family:'DM Sans',sans-serif;
+}
+.section-label::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,var(--border2),transparent)}
+
+/* ── About ── */
+.about-text{font-size:15px;line-height:1.9;color:var(--text-mid);font-weight:300}
+.about-text strong{color:var(--text-dark);font-weight:500}
+
+/* ── Certs ── */
+.certs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(172px,1fr));gap:12px}
+.cert-card{
+  background:var(--card-bg2);border:1px solid var(--border);
+  border-radius:12px;padding:16px 18px;
+  display:flex;flex-direction:column;gap:6px;
+  transition:all 0.2s ease;
+}
+.cert-card:hover{background:white;border-color:var(--border2);transform:translateY(-2px);box-shadow:0 6px 20px var(--glow)}
+.cert-card.in-progress{border-style:dashed;border-color:rgba(100,170,220,0.35)}
+.cert-badge{
+  width:32px;height:32px;border-radius:6px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:11px;font-weight:700;color:white;
+  font-family:'DM Sans',sans-serif;letter-spacing:0.02em;margin-bottom:6px;
+}
+.cert-badge.aws{background:#FF9900}
+.cert-badge.finops{background:#005B99}
+.cert-badge.sql{background:#2d6a92}
+.cert-badge.pm{background:#3a7ca5}
+.cert-name{font-size:13px;font-weight:500;color:var(--text-dark);line-height:1.3}
+.cert-issuer{font-size:11px;color:var(--text-light)}
+.cert-status{font-size:11px;color:var(--accent);font-style:italic;margin-top:2px}
+
+/* ── Skills ── */
+.skills-grid{display:flex;flex-wrap:wrap;gap:8px}
+.skill-tag{
+  padding:5px 14px;border-radius:6px;
+  background:rgba(58,124,165,0.08);border:1px solid rgba(58,124,165,0.18);
+  font-size:12px;color:var(--accent);font-weight:500;
+  transition:all 0.15s ease;
+}
+.skill-tag:hover{background:rgba(58,124,165,0.15);border-color:var(--accent)}
+.skill-tag.soft{background:rgba(107,143,168,0.08);border-color:rgba(107,143,168,0.2);color:var(--text-mid)}
+.skills-sublabel{
+  font-size:10px;letter-spacing:0.18em;text-transform:uppercase;
+  color:var(--text-light);font-weight:500;margin:14px 0 8px;
+  width:100%;font-family:'DM Sans',sans-serif;
+}
+.skills-sublabel:first-child{margin-top:0}
+
+/* ── Experience ── */
+.exp-item{padding:22px 0;border-bottom:1px solid var(--border)}
+.exp-item:last-child{border-bottom:none;padding-bottom:0}
+.exp-item:first-child{padding-top:0}
+.exp-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px;gap:12px;flex-wrap:wrap}
+.exp-role{font-size:16px;font-weight:500;color:var(--text-dark)}
+.exp-company{
+  font-size:11px;color:var(--accent);font-weight:500;
+  margin-top:4px;letter-spacing:0.1em;text-transform:uppercase;
+  font-family:'DM Sans',sans-serif;
+}
+.exp-date{
+  font-size:11px;color:var(--text-light);white-space:nowrap;
+  font-weight:500;letter-spacing:0.08em;
+  background:rgba(58,124,165,0.07);
+  border:1px solid var(--border);
+  padding:4px 10px;border-radius:6px;
+  font-family:'DM Sans',sans-serif;
+}
+.exp-bullets{margin:8px 0 0;padding:0;list-style:none}
+.exp-bullets li{
+  font-size:13px;color:var(--text-mid);line-height:1.75;
+  font-weight:300;padding:2px 0 2px 16px;position:relative;
+}
+.exp-bullets li::before{content:'▸';position:absolute;left:1px;color:var(--accent);font-size:10px;top:5px}
+
+/* ── Education ── */
+.edu-row{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:12px}
+.edu-degree{font-size:16px;font-weight:500;color:var(--text-dark)}
+.edu-school{font-size:12px;color:var(--accent);font-weight:500;margin-top:4px;letter-spacing:0.08em;text-transform:uppercase;font-family:'DM Sans',sans-serif}
+
+/* ── Resume ── */
+.resume-block{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.resume-text{font-size:14px;color:var(--text-mid);font-weight:300;line-height:1.7}
+
+/* ── CTA ── */
+.cta-card{text-align:center;padding:56px 40px 44px}
+.cta-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(28px,4vw,40px);font-weight:300;
+  color:var(--text-dark);margin-bottom:12px;line-height:1.2;
+}
+.cta-title span{color:var(--accent)}
+.cta-sub{font-size:15px;color:var(--text-mid);margin-bottom:32px;line-height:1.7;font-weight:300}
+.cta-btns{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+
+/* ── Form ── */
+.form-divider{display:flex;align-items:center;gap:16px;margin:36px 0 28px}
+.form-divider::before,.form-divider::after{content:'';flex:1;height:1px;background:var(--border2)}
+.form-divider span{font-size:10px;color:var(--text-light);letter-spacing:0.18em;text-transform:uppercase;white-space:nowrap;font-family:'DM Sans',sans-serif}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px;text-align:left}
+.form-group{display:flex;flex-direction:column;gap:6px}
+.form-group.full{grid-column:1/-1}
+.form-group label{font-size:10px;font-weight:500;color:var(--text-light);letter-spacing:0.15em;text-transform:uppercase;font-family:'DM Sans',sans-serif}
+.form-group input,.form-group textarea,.form-group select{
+  width:100%;padding:11px 14px;border-radius:8px;
+  border:1px solid var(--border2);
+  background:rgba(255,255,255,0.6);
+  font-family:'DM Sans',sans-serif;font-size:13px;color:var(--text-dark);
+  outline:none;transition:border-color 0.2s,box-shadow 0.2s;resize:none;
+  backdrop-filter:blur(8px);
+}
+.form-group input:focus,.form-group textarea:focus,.form-group select:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--glow);background:white}
+.form-group textarea{min-height:110px;line-height:1.6}
+.form-footer{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:8px;text-align:left}
+.form-note{font-size:11px;color:var(--text-light);font-weight:300}
+.form-hidden{display:none}
+.success-msg{text-align:center;padding:20px 0}
+.success-icon{font-size:38px;margin-bottom:12px}
+.success-msg h3{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:300;color:var(--text-dark);margin-bottom:8px}
+.success-msg p{font-size:14px;color:var(--text-mid);font-weight:300}
+
+/* ── Footer ── */
+footer{text-align:center;padding:44px 0 0;font-size:11px;color:var(--text-light);letter-spacing:0.12em;font-family:'DM Sans',sans-serif;font-weight:500;text-transform:uppercase}
+footer span{color:var(--accent)}
+
+@media(max-width:600px){
+  .card,.cta-card{padding:24px 20px}
+  .resume-block,.form-footer{flex-direction:column;align-items:flex-start}
+  .form-grid{grid-template-columns:1fr}
+  .certs-grid{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+
+<div class="cloud-layer">
+  <div class="cloud cl1"><svg width="300" height="90" viewBox="0 0 300 90"><ellipse cx="110" cy="65" rx="95" ry="28"/><ellipse cx="175" cy="52" rx="75" ry="32"/><ellipse cx="230" cy="62" rx="68" ry="26"/><ellipse cx="145" cy="40" rx="58" ry="28"/></svg></div>
+  <div class="cloud cl2"><svg width="180" height="65" viewBox="0 0 180 65"><ellipse cx="65" cy="48" rx="58" ry="20"/><ellipse cx="105" cy="38" rx="48" ry="22"/><ellipse cx="140" cy="46" rx="40" ry="18"/><ellipse cx="85" cy="30" rx="36" ry="18"/></svg></div>
+  <div class="cloud cl3"><svg width="260" height="80" viewBox="0 0 260 80"><ellipse cx="95" cy="58" rx="82" ry="24"/><ellipse cx="155" cy="47" rx="66" ry="28"/><ellipse cx="205" cy="56" rx="58" ry="22"/><ellipse cx="125" cy="36" rx="52" ry="24"/></svg></div>
+  <div class="cloud cl4"><svg width="150" height="55" viewBox="0 0 150 55"><ellipse cx="55" cy="40" rx="48" ry="17"/><ellipse cx="88" cy="32" rx="40" ry="19"/><ellipse cx="118" cy="39" rx="34" ry="15"/><ellipse cx="72" cy="25" rx="30" ry="16"/></svg></div>
+  <div class="cloud cl5"><svg width="320" height="95" viewBox="0 0 320 95"><ellipse cx="115" cy="70" rx="100" ry="28"/><ellipse cx="185" cy="57" rx="80" ry="34"/><ellipse cx="250" cy="67" rx="72" ry="26"/><ellipse cx="150" cy="43" rx="64" ry="30"/></svg></div>
+  <div class="cloud cl6"><svg width="170" height="62" viewBox="0 0 170 62"><ellipse cx="62" cy="46" rx="55" ry="19"/><ellipse cx="100" cy="36" rx="45" ry="21"/><ellipse cx="132" cy="44" rx="38" ry="17"/><ellipse cx="80" cy="28" rx="33" ry="18"/></svg></div>
+  <div class="cloud cl7"><svg width="280" height="88" viewBox="0 0 280 88"><ellipse cx="100" cy="64" rx="90" ry="27"/><ellipse cx="162" cy="53" rx="72" ry="30"/><ellipse cx="215" cy="62" rx="64" ry="25"/><ellipse cx="132" cy="41" rx="55" ry="27"/></svg></div>
+  <div class="cloud cl8"><svg width="140" height="52" viewBox="0 0 140 52"><ellipse cx="50" cy="38" rx="44" ry="16"/><ellipse cx="80" cy="30" rx="37" ry="18"/><ellipse cx="108" cy="37" rx="32" ry="14"/><ellipse cx="65" cy="24" rx="28" ry="15"/></svg></div>
+  <div class="cloud cl9"><svg width="290" height="90" viewBox="0 0 290 90"><ellipse cx="105" cy="66" rx="92" ry="27"/><ellipse cx="168" cy="54" rx="74" ry="31"/><ellipse cx="222" cy="63" rx="66" ry="25"/><ellipse cx="138" cy="42" rx="57" ry="28"/></svg></div>
+  <div class="cloud cl10"><svg width="195" height="70" viewBox="0 0 195 70"><ellipse cx="72" cy="52" rx="63" ry="21"/><ellipse cx="116" cy="41" rx="52" ry="24"/><ellipse cx="155" cy="50" rx="44" ry="19"/><ellipse cx="93" cy="32" rx="39" ry="21"/></svg></div>
+  <div class="cloud cl11"><svg width="240" height="82" viewBox="0 0 240 82"><ellipse cx="88" cy="60" rx="78" ry="24"/><ellipse cx="142" cy="49" rx="63" ry="28"/><ellipse cx="190" cy="58" rx="54" ry="22"/><ellipse cx="115" cy="38" rx="49" ry="25"/></svg></div>
+  <div class="cloud cl12"><svg width="160" height="60" viewBox="0 0 160 60"><ellipse cx="58" cy="44" rx="52" ry="18"/><ellipse cx="94" cy="35" rx="43" ry="20"/><ellipse cx="125" cy="43" rx="36" ry="16"/><ellipse cx="76" cy="27" rx="31" ry="17"/></svg></div>
+  <div class="cloud cl13"><svg width="270" height="85" viewBox="0 0 270 85"><ellipse cx="98" cy="62" rx="88" ry="26"/><ellipse cx="158" cy="51" rx="70" ry="30"/><ellipse cx="210" cy="60" rx="62" ry="24"/><ellipse cx="128" cy="39" rx="54" ry="27"/></svg></div>
+  <div class="cloud cl14"><svg width="185" height="68" viewBox="0 0 185 68"><ellipse cx="68" cy="50" rx="60" ry="20"/><ellipse cx="110" cy="40" rx="50" ry="23"/><ellipse cx="148" cy="48" rx="42" ry="18"/><ellipse cx="88" cy="31" rx="37" ry="20"/></svg></div>
+  <div class="cloud cl15"><svg width="145" height="54" viewBox="0 0 145 54"><ellipse cx="53" cy="40" rx="46" ry="16"/><ellipse cx="84" cy="31" rx="38" ry="18"/><ellipse cx="112" cy="39" rx="33" ry="14"/><ellipse cx="68" cy="25" rx="29" ry="15"/></svg></div>
+  <div class="cloud cl16"><svg width="310" height="92" viewBox="0 0 310 92"><ellipse cx="112" cy="68" rx="98" ry="28"/><ellipse cx="178" cy="55" rx="78" ry="33"/><ellipse cx="240" cy="65" rx="70" ry="26"/><ellipse cx="145" cy="42" rx="62" ry="29"/></svg></div>
+</div>
+
+<div class="page">
+
+  <header class="hero">
+    <h1>Ashley Bar-Shay</h1>
+    <p class="subtitle">FinOps Engineer &nbsp;·&nbsp; Cloud &amp; AI Cost Optimization</p>
+    <div class="contact-bar">
+      <a href="mailto:agerber2@babson.edu" class="contact-pill">✉ agerber2@babson.edu</a>
+      <span class="contact-pill">📍 New York, NY</span>
+    </div>
+    <div class="hero-btns">
+      <a href="https://calendly.com/ashleybarshay" target="_blank" class="btn-primary">📅 Schedule a meeting</a>
+      <a href="https://linkedin.com/in/ashley-w-gerber" target="_blank" class="btn-li">
+        <svg class="li-icon" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        Connect on LinkedIn
+      </a>
+      <button class="btn-outline" id="hero-contact-btn">✉ Message me</button>
+    </div>
+  </header>
+
+  <section>
+    <div class="card">
+      <div class="section-label">About</div>
+      <p class="about-text">
+        I've spent the last 5 years at the forefront of cloud cost optimization. I started by learning the industry inside out at Zesty, then driving FinOps at Mobileye. I've helped engineering and finance teams get control of their cloud and AI costs and built practices aligned with business goals.<br><br>
+        My background spans FinOps project management across AWS and GCP, cloud alliance strategy, and business development. I bring both the technical understanding to navigate cloud billing complexity and the business fluency to translate it for executive leadership and cross-functional teams.<br><br>
+        I'm currently open to opportunities where I can bring this expertise to the right team.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="card">
+      <div class="section-label">Certifications</div>
+      <div class="certs-grid">
+        <div class="cert-card">
+          <img src="AWS_Certified_Cloud_Practitioner.png" alt="AWS Certified Cloud Practitioner" style="width:48px;height:48px;object-fit:contain;display:block;margin-bottom:8px;flex-shrink:0"/>
+          <div class="cert-name">AWS Certified Cloud Practitioner</div>
+          <div class="cert-issuer">Amazon Web Services</div>
+        </div>
+        <div class="cert-card">
+          <img src="finops_focus_analyst.png" alt="FinOps Certified FOCUS Analyst" style="width:48px;height:48px;object-fit:contain;display:block;margin-bottom:8px;flex-shrink:0"/>
+          <div class="cert-name">FinOps Certified FOCUS Analyst</div>
+          <div class="cert-issuer">FinOps Foundation</div>
+        </div>
+        <div class="cert-card">
+          <img src="finops_certified_ai.png" alt="FinOps for AI" style="width:48px;height:48px;object-fit:contain;display:block;margin-bottom:8px;flex-shrink:0"/>
+          <div class="cert-name">FinOps for AI</div>
+          <div class="cert-issuer">FinOps Foundation</div>
+        </div>
+        <div class="cert-card">
+          <img src="finops_certified_practitioner.png" alt="FinOps Certified Practitioner" style="width:48px;height:48px;object-fit:contain;display:block;margin-bottom:8px;flex-shrink:0"/>
+          <div class="cert-name">FinOps Certified Practitioner</div>
+          <div class="cert-issuer">FinOps Foundation</div>
+        </div>
+        <div class="cert-card">
+          <img src="codewithmosh_logo.jpg" alt="Code with Mosh" style="width:48px;height:48px;object-fit:contain;display:block;margin-bottom:8px;flex-shrink:0"/>
+          <div class="cert-name">Complete SQL Mastery</div>
+          <div class="cert-issuer">Code with Mosh</div>
+        </div>
+        <div class="cert-card">
+          <img src="elevation_corporate_training_logo.jpg" alt="Elevation" style="width:48px;height:48px;object-fit:contain;display:block;margin-bottom:8px;flex-shrink:0"/>
+          <div class="cert-name">Project Management</div>
+          <div class="cert-issuer">Elevation</div>
+        </div>
+        <div class="cert-card in-progress">
+          <img src="aws_solutions_architect.png" alt="AWS Solutions Architect" style="width:48px;height:48px;object-fit:contain;display:block;margin-bottom:8px;flex-shrink:0"/>
+          <div class="cert-name">AWS Solutions Architect</div>
+          <div class="cert-issuer">Amazon Web Services</div>
+          <div class="cert-status">⏳ In Progress — Summer 2026</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="card">
+      <div class="section-label">Skills &amp; Expertise</div>
+      <div class="skills-grid">
+        <span class="skills-sublabel">Technical</span>
+        <span class="skill-tag">FinOps Practitioner</span>
+        <span class="skill-tag">Cloud Cost Optimization</span>
+        <span class="skill-tag">AWS</span>
+        <span class="skill-tag">GCP</span>
+        <span class="skill-tag">AI Cost Management</span>
+        <span class="skill-tag">Amazon QuickSight</span>
+        <span class="skill-tag">Finout</span>
+        <span class="skill-tag">S3</span>
+        <span class="skill-tag">Linux</span>
+        <span class="skill-tag">SQL</span>
+        <span class="skill-tag">Jira</span>
+        <span class="skill-tag">Excel</span>
+        <span class="skill-tag">Project Management</span>
+        <span class="skills-sublabel">Soft Skills</span>
+        <span class="skill-tag soft">Stakeholder Management</span>
+        <span class="skill-tag soft">Cross-Functional Collaboration</span>
+        <span class="skill-tag soft">Data Analysis</span>
+        <span class="skill-tag soft">Executive Presentations</span>
+        <span class="skill-tag soft">Leadership</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="card">
+      <div class="section-label">Experience</div>
+      <div class="exp-item">
+        <div class="exp-header">
+          <div><div class="exp-role">FinOps Project Manager</div><div class="exp-company">Mobileye</div></div>
+          <div class="exp-date">2024 – 2025</div>
+        </div>
+        <ul class="exp-bullets">
+          <li>Managed multi-million dollar enterprise AWS and GCP cloud environments across multiple R&D groups.</li>
+          <li>Achieved over $300K in cloud cost reductions through strategic optimization projects.</li>
+          <li>Built detailed financial and usage dashboards in QuickSight and Finout to enable real-time, data-driven decision-making.</li>
+          <li>Partnered with Finance, Engineering, Procurement, and Product teams to translate business goals into actionable FinOps initiatives, forecast budgets, and negotiate contracts.</li>
+          <li>Presented FinOps projects and budget forecasts regularly to executive leadership.</li>
+          <li>Contributed to the early development of an AI cost and token management framework using a showback model across the R&D organization.</li>
+        </ul>
+      </div>
+      <div class="exp-item">
+        <div class="exp-header">
+          <div><div class="exp-role">AWS Cloud Alliance Manager</div><div class="exp-company">Zesty</div></div>
+          <div class="exp-date">2023 – 2024</div>
+        </div>
+        <ul class="exp-bullets">
+          <li>Generated $3.5M in new ARR from AWS-led referrals in 3 quarters.</li>
+          <li>Built the alliance department's growth plan, onboarding plan, and 2024 budget.</li>
+          <li>Led strategy for Sales and Partners teams for H2 2023 and FY2024 by opening new markets in collaboration with AWS.</li>
+          <li>Led multiple enablement sessions with AWS teams, enhancing brand awareness and launching the co-selling motion.</li>
+          <li>Worked closely with the Product team on co-building with AWS and gaining new AWS Competencies.</li>
+        </ul>
+      </div>
+      <div class="exp-item">
+        <div class="exp-header">
+          <div><div class="exp-role">BDR Team Lead</div><div class="exp-company">Zesty</div></div>
+          <div class="exp-date">2021 – 2023</div>
+        </div>
+        <ul class="exp-bullets">
+          <li>Led team to generate over $7M in new ARR in 18 months — 80% of Zesty's closed/won ACV.</li>
+          <li>Built and implemented hiring, onboarding, and assessment processes now deployed across BDR and SDR teams.</li>
+          <li>Spearheaded CRM migration from HubSpot to Salesforce and led setup of Outreach as a sales enablement tool.</li>
+        </ul>
+      </div>
+      <div class="exp-item">
+        <div class="exp-header">
+          <div><div class="exp-role">Senior Business Development Representative</div><div class="exp-company">Sisense</div></div>
+          <div class="exp-date">2020 – 2021</div>
+        </div>
+        <ul class="exp-bullets">
+          <li>#1 International Team ADR in 2020 — most ACV generated by new accounts closed/won.</li>
+          <li>International Team MVP Q3 2020; exceeded target by 100% each quarter.</li>
+          <li>Led onboarding for new ADRs and shared best practices across the international sales team.</li>
+        </ul>
+      </div>
+      <div class="exp-item">
+        <div class="exp-header">
+          <div><div class="exp-role">Aerial Defense Combat Soldier, Sergeant</div><div class="exp-company">Israel Defense Forces</div></div>
+          <div class="exp-date">2017 – 2019</div>
+        </div>
+        <ul class="exp-bullets">
+          <li>Completed Interceptors Course (Level 07) — trained to operate Iron Dome technology and software under extreme pressure.</li>
+          <li>Developed leadership, discipline, and the ability to perform effectively in high-stakes environments.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="card">
+      <div class="section-label">Education</div>
+      <div class="edu-row">
+        <div>
+          <div class="edu-degree">BSc. Business Management — Finance &amp; Accounting</div>
+          <div class="edu-school">Babson College</div>
+        </div>
+        <div class="exp-date">2017</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="card" style="text-align:center;padding:44px 40px;">
+      <div class="section-label" style="justify-content:center;margin-bottom:20px;">Resume</div>
+      <div style="font-size:40px;margin-bottom:16px;">📄</div>
+      <h3 style="font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;color:var(--text-dark);margin-bottom:10px;">Want the full picture?</h3>
+      <p style="font-size:14px;color:var(--text-mid);font-weight:300;line-height:1.7;max-width:420px;margin:0 auto 28px;">Prefer a traditional format? Download a print-ready PDF version of my experience and certifications — perfect for sharing with your team.</p>
+      <a href="resume.pdf" class="btn-primary" download style="display:inline-flex;">⬇ Download Resume</a>
+    </div>
+  </section>
+
+  <section>
+    <div class="card cta-card" id="contact-anchor">
+      <div class="cta-title">Let's talk <span>cloud costs</span> ☁</div>
+      <p class="cta-sub">Whether you're looking to optimize spend, build a FinOps practice, or just compare notes — I'd love to connect.</p>
+      <div class="cta-btns">
+        <a href="https://calendly.com/ashleybarshay" target="_blank" class="btn-primary">📅 Schedule a meeting</a>
+        <button class="btn-outline" id="show-form-btn">✉ Send a message</button>
+      </div>
+      <div id="contact-form-area" class="form-hidden">
+        <div class="form-divider"><span>send a message</span></div>
+        <div id="form-wrap">
+          <div class="form-grid">
+            <div class="form-group"><label for="cf-name">Your name</label><input type="text" id="cf-name" placeholder="Jane Smith" autocomplete="name"/></div>
+            <div class="form-group"><label for="cf-email">Email address</label><input type="email" id="cf-email" placeholder="jane@company.com" autocomplete="email"/></div>
+            <div class="form-group"><label for="cf-company">Company</label><input type="text" id="cf-company" placeholder="Acme Corp"/></div>
+            <div class="form-group"><label for="cf-reason">Reason for reaching out</label>
+              <select id="cf-reason"><option value="" disabled selected>Select one…</option><option>Job opportunity</option><option>Consulting inquiry</option><option>Speaking / event</option><option>Just saying hello</option><option>Other</option></select>
+            </div>
+            <div class="form-group full"><label for="cf-msg">Message</label><textarea id="cf-msg" placeholder="Tell me a bit about what you have in mind…"></textarea></div>
+          </div>
+          <div class="form-footer">
+            <p class="form-note">Goes straight to Ashley's inbox — no spam, ever.</p>
+            <button class="btn-primary" id="cf-submit">✉ Send message</button>
+          </div>
+          <p id="cf-error" style="color:#c0392b;font-size:12px;margin-top:10px;display:none;text-align:left">Please fill in your name, email, and message.</p>
+        </div>
+        <div class="success-msg form-hidden" id="cf-success">
+          <div class="success-icon">☁️</div>
+          <h3>Message sent — thank you!</h3>
+          <p>Ashley will get back to you soon. Feel free to connect on LinkedIn or book a time on Calendly.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p style="font-family:'Cormorant Garamond',serif;font-size:16px;font-style:italic;font-weight:300;color:var(--text-mid);margin-bottom:8px;">Get obsessed with the cloud ☁️</p>
+    <p>Built by <span>Ashley Bar-Shay</span> &nbsp;·&nbsp; © 2026</p>
+  </footer>
+</div>
+
+<script>
+document.getElementById('hero-contact-btn').addEventListener('click',function(){
+  document.getElementById('contact-anchor').scrollIntoView({behavior:'smooth',block:'center'});
+  setTimeout(()=>{
+    const area=document.getElementById('contact-form-area');
+    const btn=document.getElementById('show-form-btn');
+    if(area.classList.contains('form-hidden')){
+      area.classList.remove('form-hidden');
+      btn.textContent='✕ Never mind';
+    }
+  },600);
+});
+
+document.getElementById('show-form-btn').addEventListener('click',function(){
+  const area=document.getElementById('contact-form-area');
+  const btn=document.getElementById('show-form-btn');
+  if(area.classList.contains('form-hidden')){
+    area.classList.remove('form-hidden');
+    btn.textContent='✕ Never mind';
+    setTimeout(()=>area.scrollIntoView({behavior:'smooth',block:'nearest'}),50);
+  }else{
+    area.classList.add('form-hidden');
+    btn.textContent='✉ Send a message';
+  }
+});
+
+document.getElementById('cf-submit').addEventListener('click',function(){
+  const name=document.getElementById('cf-name').value.trim();
+  const email=document.getElementById('cf-email').value.trim();
+  const msg=document.getElementById('cf-msg').value.trim();
+  const err=document.getElementById('cf-error');
+  if(!name||!email||!msg){err.style.display='block';return;}
+  err.style.display='none';
+  const subject=encodeURIComponent('Message from your website — '+name);
+  const body=encodeURIComponent('Name: '+name+'\nEmail: '+email+'\nCompany: '+(document.getElementById('cf-company').value.trim()||'N/A')+'\nReason: '+(document.getElementById('cf-reason').value||'N/A')+'\n\nMessage:\n'+msg);
+  window.location.href='mailto:agerber2@babson.edu?subject='+subject+'&body='+body;
+  document.getElementById('form-wrap').classList.add('form-hidden');
+  document.getElementById('cf-success').classList.remove('form-hidden');
+});
+
+const layer=document.querySelector('.cloud-layer');
+const shapes=[[[300,90],[[110,65,95,28],[175,52,75,32],[230,62,68,26],[145,40,58,28]]],[[180,65],[[65,48,58,20],[105,38,48,22],[140,46,40,18],[85,30,36,18]]],[[260,80],[[95,58,82,24],[155,47,66,28],[205,56,58,22],[125,36,52,24]]]];
+for(let i=0;i<18;i++){
+  const s=shapes[i%shapes.length];const[w,h]=s[0];
+  const el=document.createElement('div');el.className='cloud';
+  const dur=16+Math.random()*22;
+  el.style.cssText='top:'+(Math.random()*98)+'%;opacity:'+(0.25+Math.random()*0.4)+';animation-duration:'+dur+'s;animation-delay:'+(-(Math.random()*dur))+'s;';
+  el.innerHTML='<svg width="'+w+'" height="'+h+'" viewBox="0 0 '+w+' '+h+'">'+s[1].map(([cx,cy,rx,ry])=>'<ellipse cx="'+cx+'" cy="'+cy+'" rx="'+rx+'" ry="'+ry+'"/>').join('')+'</svg>';
+  layer.appendChild(el);
+}
+</script>
+</body>
+</html>
